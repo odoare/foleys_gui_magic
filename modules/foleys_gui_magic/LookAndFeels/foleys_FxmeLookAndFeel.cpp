@@ -1,4 +1,4 @@
-#include "FxmeLookAndFeel.h"
+#include "foleys_FxmeLookAndFeel.h"
 
 namespace foleys
 {
