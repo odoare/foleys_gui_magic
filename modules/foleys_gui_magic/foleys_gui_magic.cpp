@@ -77,6 +77,7 @@
 #include "LookAndFeels/foleys_JuceLookAndFeels.cpp"
 #include "LookAndFeels/foleys_LookAndFeel.cpp"
 #include "LookAndFeels/foleys_Skeuomorphic.cpp"
+#include "LookAndFeels/FxmeLookAndFeel.h"
 
 #if FOLEYS_SHOW_GUI_EDITOR_PALLETTE
 

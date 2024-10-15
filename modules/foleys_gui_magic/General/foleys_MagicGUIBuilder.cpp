@@ -39,6 +39,7 @@
 #include "../LookAndFeels/foleys_JuceLookAndFeels.h"
 #include "../LookAndFeels/foleys_LookAndFeel.h"
 #include "../LookAndFeels/foleys_Skeuomorphic.h"
+#include "../LookAndFeels/FxmeLookAndFeel.h"
 
 #if FOLEYS_SHOW_GUI_EDITOR_PALLETTE
 #include "../Editor/foleys_ToolBox.h"
@@ -260,6 +261,7 @@ void MagicGUIBuilder::registerJUCELookAndFeels()
     stylesheet.registerLookAndFeel ("LookAndFeel_V4", std::make_unique<JuceLookAndFeel_V4>());
     stylesheet.registerLookAndFeel ("FoleysFinest", std::make_unique<LookAndFeel>());
     stylesheet.registerLookAndFeel ("Skeuomorphic", std::make_unique<Skeuomorphic>());
+    stylesheet.registerLookAndFeel ("FX-Mechanics", std::make_unique<FxmeKnobLookAndFeel>());
 }
 
 juce::var MagicGUIBuilder::getStyleProperty (const juce::Identifier& name, const juce::ValueTree& node) const

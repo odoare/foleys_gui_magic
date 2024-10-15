@@ -116,6 +116,7 @@
 #include "LookAndFeels/foleys_JuceLookAndFeels.h"
 #include "LookAndFeels/foleys_LookAndFeel.h"
 #include "LookAndFeels/foleys_Skeuomorphic.h"
+#include "LookAndFeels/FxmeLookAndFeel.h"
 
 #include "Visualisers/foleys_MagicLevelSource.h"
 #include "Visualisers/foleys_MagicPlotSource.h"
