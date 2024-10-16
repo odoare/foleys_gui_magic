@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.pd_lua": "lua",
+        "random": "cpp",
+        "*.mm": "cpp"
+    }
+}

@@ -19,28 +19,36 @@ void FxmeKnobLookAndFeel::drawRotarySlider(juce::Graphics &g,
     float rx = centreX - radius;
     float ry = centreY - radius;
     float angle = rotaryStartAngle + (sliderPos * (rotaryEndAngle-rotaryStartAngle));
-    float thickness = diameter/12;
+    float thickness = diameter/15;
+
+    juce::PathStrokeType path{thickness, juce::PathStrokeType::JointStyle::curved, juce::PathStrokeType::EndCapStyle::rounded};
 
     juce::Rectangle<float> dialArea(rx,ry,diameter,diameter);
     g.setColour(slider.findColour(juce::Slider::rotarySliderFillColourId).brighter(1.5f));
-    g.drawEllipse(dialArea.reduced(thickness).translated(0.f,-thickness*0.1f),thickness*0.3f);
+    g.drawEllipse(dialArea.reduced(thickness).translated(0.f,-thickness*0.12f),thickness*0.36f);
     g.setColour(slider.findColour(juce::Slider::rotarySliderFillColourId));
     g.fillEllipse(dialArea.reduced(thickness));
     
     g.setColour(slider.findColour(juce::Slider::thumbColourId));
+
+    // Rectangle ?
     juce::Path dialTick;
-    juce::Rectangle<int> rect(0.f,-radius+thickness,thickness,radius*0.4);
+    juce::Rectangle<float> rect(.25f*thickness,-radius+2.*thickness,.5*thickness,radius*0.2);
     dialTick.addRectangle(rect);
     g.fillPath(dialTick,juce::AffineTransform::rotation(angle).translated(centreX,centreY));
+
+    // // Disc ?
+    // juce::Rectangle<float> thumbArea(0.f,-radius+2*thickness,thickness,thickness);
+    // g.fillEllipse(thumbArea.transformedBy(juce::AffineTransform::rotation(angle).translated(centreX,centreY)));
 
     g.setColour(slider.findColour(juce::Slider::trackColourId));
     juce::Path arc1;
     arc1.addArc(centreX-diameter/2, centreY-diameter/2, diameter, diameter, rotaryStartAngle, rotaryEndAngle, true);
-    g.strokePath(arc1, juce::PathStrokeType(thickness));
+    g.strokePath(arc1, path);
+
     g.setColour(slider.findColour(juce::Slider::rotarySliderOutlineColourId));
-    juce::Path arc2, arc3;
+    juce::Path arc2;
     arc2.addArc(centreX-diameter/2, centreY-diameter/2, diameter, diameter, rotaryStartAngle, angle, true);
-    juce::PathStrokeType path{thickness, juce::PathStrokeType::JointStyle::curved, juce::PathStrokeType::EndCapStyle::rounded};
     g.strokePath(arc2, path);
     
   };
