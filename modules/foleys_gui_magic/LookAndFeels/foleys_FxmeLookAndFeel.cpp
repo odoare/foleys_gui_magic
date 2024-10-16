@@ -22,8 +22,8 @@ void FxmeKnobLookAndFeel::drawRotarySlider(juce::Graphics &g,
     float thickness = diameter/12;
 
     juce::Rectangle<float> dialArea(rx,ry,diameter,diameter);
-    g.setColour(slider.findColour(juce::Slider::rotarySliderFillColourId).brighter(2.f));
-    g.drawEllipse(dialArea.reduced(thickness).translated(0.f,-thickness*0.05f),thickness*0.15f);
+    g.setColour(slider.findColour(juce::Slider::rotarySliderFillColourId).brighter(1.5f));
+    g.drawEllipse(dialArea.reduced(thickness).translated(0.f,-thickness*0.1f),thickness*0.3f);
     g.setColour(slider.findColour(juce::Slider::rotarySliderFillColourId));
     g.fillEllipse(dialArea.reduced(thickness));
     
